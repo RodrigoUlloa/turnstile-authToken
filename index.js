@@ -1,13 +1,14 @@
 const express = require('express');
-const { json } = express;
+const { json, urlencoded, static } = express;
+const path = require('path');
 const routes = require('./src/routes/routes.js');
 
 const app = express();
 app.use(json());
+app.use(urlencoded({ extended: true }));
 
-const { PORT } = process.env;
-
-app.use(routes);
+app.use(static(path.join(__dirname, 'src/public')));
+const { PORT } = process.env || 3000;
 
 app.use(routes);
 app.listen(PORT, () => {

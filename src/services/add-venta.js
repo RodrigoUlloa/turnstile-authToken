@@ -1,9 +1,9 @@
-const { getKameToken } = require('./token-generator');
+const { getToken } = require('./token-generator');
 const { KAME_BASE_URL } = process.env;
 
 exports.addVenta = async (payload) => {
   try {
-    const token = await getKameToken();
+    const token = await getToken();
     const response = await fetch(`${KAME_BASE_URL}/api/Documento/addVenta`, {
       method: 'POST',
       headers: {

@@ -1,7 +1,7 @@
 const { DEV_KAME_CLIENT_ID, DEV_KAME_CLIENT_SECRET, KAME_BASE_URL } =
   process.env;
 
-exports.getKameToken = async () => {
+exports.getToken = async () => {
   const body = {
     client_id: DEV_KAME_CLIENT_ID,
     client_secret: DEV_KAME_CLIENT_SECRET,
